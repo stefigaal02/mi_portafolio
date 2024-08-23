@@ -1,0 +1,45 @@
+header {
+    background-color: rgb(149, 206, 189); /* Color de fondo usando nombre de color */
+    color: black; /* Color de texto usando nombre de color */
+    text-align: center;
+
+  }
+   
+
+  h1 {
+    color: #090a0a; /* Un color azul definido en formato hexadecimal (#3498db) */
+  }
+
+  h2 {
+    color: #357c7c; 
+    background-color: antiquewhite;
+    background-position: center;
+    background-size: cover;
+  }
+
+
+li {
+    color: rgb(14, 14, 17);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+nav {
+    background-color: #abe4ce;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 0;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    bottom: -20px;
+    border: 1px solid rgb(150,150,150);   
+
+ }
