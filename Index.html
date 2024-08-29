@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="all.min.css">
+    <script src="https://kit.fontawesome.com/309f569082.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>Portafolio Stefanie Gallo</h1>
-        </div>
-        <nav>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Estudios</a></li>
-            <li><a href="#">Experiencia</a></li>
-            <li><a href="#">Cosas que me gustaria hacer</a></li>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Estudios</h2>
-            <ol>
-                <li>Ingenieria de Sotfware</li>
-                <li>Asistencia Administrativa</li>
-            </ol>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="brand">
+                    <h2>S<span>G</span></h2>
+                </div>
+                <ul class="menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Acerca de mi</a></li>
+                    <li><a href="#">Portafolio</a></li>
+                    <li><a href="#">Contacto</a></li>
 
-            <h2>Experiencia</h2>
-            <ol>
-                <li>Ninguna</li>
-            </ol>
+                </ul>
+            </nav>
+        </header>
 
-            <h2>Cosas que me gustaria hacer</h2>
-            <ol>
-                <li>Ir al GYM</li>
-                <li>Aprender idiomas</li>
-                <li>Viajar</li>
-                <img src="png-transparent-fitness-centre-physical-fitness-logo-work-out-hand-sticker-sports-thumbnail.png"
-                    width="100" height="100">
-                <img src="World-Travel-PNG-Image.png" width="120" height="120">
-                <img src="language-school-template-hand-drawn-cartoon-flat-illustration-of-online-learning-courses-training-program-and-study-foreign-languages-abroad-vector.jpg" width="120" height="120">
+        <main class="main">
+            <div class="info-content">
+                <h1>Soy <span>Stefanie</span> Gallo</h1>
+                <p>Soy Stefanie Geraldine Gallo Becerra, desarrolladora de software con un enfoque en la creación de
+                    soluciones innovadoras para problemas complejos. Actualmente, estoy cursando el segundo semestre de
+                    Ingeniería de Software y constantemente me estoy formando en nuevas tecnologías para mejorar mis
+                    habilidades.</p>
+                <a download href="#">
+                    <button class="download-cv">Descarga CV</button>
+                </a>
+            </div>
+            <img src="img/IMG_2559.jpg" width="400">
+        </main>
+    </div>
 
-            </ol>
-        </section>
-    </main>
+
 
 </body>
 

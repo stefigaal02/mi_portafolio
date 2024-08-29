@@ -1,45 +1,89 @@
-header {
-    background-color: rgb(149, 206, 189); /* Color de fondo usando nombre de color */
-    color: black; /* Color de texto usando nombre de color */
-    text-align: center;
 
-  }
-   
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-  h1 {
-    color: #090a0a; /* Un color azul definido en formato hexadecimal (#3498db) */
-  }
-
-  h2 {
-    color: #357c7c; 
-    background-color: antiquewhite;
-    background-position: center;
-    background-size: cover;
-  }
-
-
-li {
-    color: rgb(14, 14, 17);
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-}
-
+  }
+   
 body {
-    font-family: Arial, sans-serif;
-}
-nav {
-    background-color: #abe4ce;
+    font-family: 'Montserrat', sans-serif;
     overflow: hidden;
-    list-style-type: none;
-    padding: 0;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    bottom: -20px;
-    border: 1px solid rgb(150,150,150);   
+}
 
- }
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(220, 192, 198);
+  color:#dfcece;
+}
+
+.brand span{
+  color: rgb(99, 1, 45);
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.brand {
+margin-top: -7px;
+}
+.menu {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+.menu li {
+  list-style: none;
+}
+.menu a{
+  color: #f5f5f1;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+.menu .active{
+  color: rgb(99, 1, 45);
+}
+
+.menu a:hover {
+  background-color: rgb(92, 46, 73);
+  color:  #9c5591;
+  transition: ease-in, 1s;
+}
+
+.main {
+  margin: 0 auto;
+  width: 80vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+}
+h1 {
+  font-size: 3em;
+  color: rgb(95, 16, 28);
+}
+
+span {
+  color: antiquewhite;
+}
+
+.download-cv {
+  padding: 10px 20px;
+  background-color: rgb(95, 16, 28);
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 1px 3px 11px -5px rgb(74, 8, 8, 69);
+}
+
+.download-cv:hover {
+  background-color: rgb(205, 200, 192);
+  box-shadow: none;
+}
+
