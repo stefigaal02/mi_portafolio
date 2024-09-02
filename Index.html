@@ -19,30 +19,184 @@
                     <h2>S<span>G</span></h2>
                 </div>
                 <ul class="menu">
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">Acerca de mi</a></li>
-                    <li><a href="#">Portafolio</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#acerca_de_mi">Acerca de mi</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
 
                 </ul>
             </nav>
         </header>
 
-        <main class="main">
+        <main class="main" id="home">
             <div class="info-content">
                 <h1>Soy <span>Stefanie</span> Gallo</h1>
-                <p>Soy Stefanie Geraldine Gallo Becerra, desarrolladora de software con un enfoque en la creación de
+                <p>Desarrolladora de software con un enfoque en la creación de
                     soluciones innovadoras para problemas complejos. Actualmente, estoy cursando el segundo semestre de
                     Ingeniería de Software y constantemente me estoy formando en nuevas tecnologías para mejorar mis
                     habilidades.</p>
                 <a download href="#">
                     <button class="download-cv">Descarga CV</button>
                 </a>
+
             </div>
-            <img src="img/IMG_2559.jpg" width="400">
+            <img src="img/IMG_2559.jpg" alt="Stefanie Gallo">
         </main>
     </div>
 
+    <div class="about" id="acerca_de_mi">
+        <img src="img/IMG2.jpg" alt="Stefanie retrato">
+
+        <div class="about--info">
+            <h2>Acerca de mí</h2>
+            <div class="divider"></div>
+            <p>
+                Soy una persona organizada, puntual y disciplinada. Valoro la limpieza y el orden en mi entorno, lo que
+                me permite mantener un enfoque claro en mis tareas. Me considero sociable y disfruto trabajando en
+                equipo, donde aporto ideas y me adapto bien a diferentes personalidades. Soy alguien que se reta
+                constantemente a mejorar y superar desafíos, buscando siempre hacer las cosas con excelencia. Además,
+                soy proactiva, responsable y comprometida con mis metas. Me esfuerzo por mantener una actitud positiva y
+                abierta al aprendizaje continuo, lo que me permite crecer tanto a nivel personal como profesional.</p>
+
+            <button class="download-cv">Leer más</button>
+        </div>
+    </div>
+
+
+
+    <div class="portafolio" id="portafolio">
+        <div class="portafolio-headings">
+            <h2>Mi portafolio</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="card_img">
+                </div>
+                <div class="card_titulo">
+                    <h2>Mi primera pagina</h2>
+                </div>
+                <div class="card_proyecto-link">
+                    <a href="https://github.com/stefigaal02/Mi-Primera-PaginaWeb.git" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </a>
+                    <a href="https://github.com/stefigaal02/Mi-Primera-PaginaWeb.git" target="_blank">
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                </div>
+                <div class="detalles-proyecto-contenido">
+                    <button class="detalles-proyecto download-cv">
+                        <a href="https://github.com/stefigaal02/Mi-Primera-PaginaWeb.git" target="_blank">
+                            Detalle proyecto
+                        </a>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card_img">
+                </div>
+                <div class="card_titulo">
+                    <h2>Bici Explora</h2>
+                </div>
+                <div class="card_proyecto-link">
+                    <a href="" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                </div>
+                <div class="detalles-proyecto-contenido">
+                    <button class="detalles-proyecto download-cv">
+                        <a href="">
+                            Detalle proyecto
+                        </a>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card_img">
+                </div>
+                <div class="card_titulo">
+                    <h2>Safe Metality</h2>
+                </div>
+                <div class="card_proyecto-link">
+                    <a href="" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                </div>
+                <div class="detalles-proyecto-contenido">
+                    <button class="detalles-proyecto download-cv">
+                        <a href="">
+                            Detalle proyecto
+                        </a>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="seccion-contacto" id="contacto">
+            <div class="contacto-headings">
+                <h2>Contáctame</h2>
+                <div class="divider-contacto"></div>
+            </div>
+
+            <div class="container-contacto">
+                <!-- Cuadro con información de contacto -->
+                <div class="contacto-info">
+                    <h4>Mis datos de contacto</h4>
+                    <ul>
+
+                        <li><i class="fa-solid fa-envelope"></i> Correo: stefigaal02@gmailcom</li>
+                        <li><i class="fa-solid fa-map-marker-alt"></i> Ubicación: Bogotá, Colombia</li>
+                        <li>
+                            <a target="_blank"
+                                href="https://api.whatsapp.com/send/?phone=573013748889&text&type=phone_number&app_absent=0"
+                                title="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/stefania.gallo.737/" title="Facebook">
+                                <i class="fa-brands fa-facebook"></i> Facebook:
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contacto-forma">
+                    <h4>Envíame un mensaje</h4>
+                    <form class="formulario-contacto">
+                        <input type="text" placeholder="Nombre">
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Coloca tu mensaje aquí..."></textarea>
+                        <button class="btn-enviar">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 
 
 </body>
