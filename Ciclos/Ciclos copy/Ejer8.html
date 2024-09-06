@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio ciclo for</title>
+</head>
+
+<body>
+    <h1>Numeros en lista</h1>
+    <div id="resultado">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+    </div>
+    <script>
+        let resultado = '';
+
+        for (let i = 1; i <= 10; i++) {
+            resultado += "<li> Numero: "+i +"</li>";
+        }
+        document.getElementById("resultado").innerHTML = "<ul>"+resultado + "</ul>";
+    </script>
+</body>
+
+</html>
