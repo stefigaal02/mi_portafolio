@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio ciclo for</title>
+</head>
+
+<body>
+    <h1>Encuentra el número más grande en un array</h1>
+    <p id="resultado"></p>
+    <script>
+        
+        let array = [5,12,4,84,100,3];
+        let numMayor = array[0];
+        for (let i = 1; i < array.length; i++) {
+            if(array[i]> numMayor){
+                numMayor = array[i];
+            } 
+        }
+        document.getElementById("resultado").textContent = "El numero mayor es: " +numMayor;
+    </script>
+</body>
+
+</html>
