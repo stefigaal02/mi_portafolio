@@ -1,51 +1,54 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
-    overflow: auto;
+  font-family: 'Montserrat', sans-serif;
+  overflow: auto;
 }
 
 .wrapper {
   width: 100vw;
   height: 100vh;
   background-color: #0a0f34;
-  color:#fff;
+  color: #fff;
 }
 
-.brand span{
+.brand span {
   color: aqua;
 }
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   padding: 2em;
 }
 
 .brand {
-margin-top: -7px;
+  margin-top: -7px;
 }
+
 .menu {
   display: flex;
   width: 50%;
   justify-content: space-around;
 }
+
 .menu li {
   list-style: none;
 }
-.menu a{
+
+.menu a {
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
 }
-.menu .active{
+
+.menu .active {
   color: aqua;
 }
 
@@ -60,9 +63,10 @@ margin-top: -7px;
   width: 80vw;
   height: 80vh;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
+
 h1 {
   font-size: 3em;
   color: #fff;
@@ -89,31 +93,31 @@ span {
 
 .main img {
   width: 300px;
-  height: 300px; 
+  height: 300px;
   border: 7px solid aqua;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .about {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  width: 100%; 
+  width: 100%;
   max-width: 100%;
   align-items: center;
   gap: 20px;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   padding: 0 20px;
 }
 
 
 .about img {
   width: 400px;
-  height: auto; 
+  height: auto;
   border: 7px solid aqua;
 }
 
 .about--info {
-  text-align: left; 
+  text-align: left;
 }
 
 .about-info {
@@ -155,10 +159,10 @@ span {
 
 .portafolio .container {
   width: 80vw;
-  height: 80vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
 }
 
 .card {
@@ -169,7 +173,7 @@ span {
   margin: 1em;
 }
 
-.card_img{
+.card_img {
   width: 100%;
   height: 150px;
   background-image: url(img/2-original.png);
@@ -177,7 +181,7 @@ span {
 }
 
 .card_titulo {
-padding: 20px;
+  padding: 20px;
 }
 
 .card_proyecto-link {
@@ -200,7 +204,7 @@ padding: 20px;
   width: 70%;
 }
 
-.card .detalles-proyecto  a {
+.card .detalles-proyecto a {
   text-decoration: none;
   color: #0a0f34;
   text-transform: uppercase;
@@ -225,7 +229,7 @@ padding: 20px;
 
 
 
-.container-contacto img{
+.container-contacto img {
   width: 755px;
   height: 700px;
   bottom: 0px;
@@ -233,13 +237,13 @@ padding: 20px;
 
 .seccion-contacto {
   background-color: #0a0f34;
-  padding: 20px 10px; 
+  padding: 20px 10px;
 }
 
 .contacto-headings h2 {
-  font-size: 2em; 
+  font-size: 2em;
   margin-bottom: 10px;
-  color: #ffffff; 
+  color: #ffffff;
   text-align: center;
 }
 
@@ -255,53 +259,56 @@ padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px; 
+  gap: 20px;
   flex-wrap: wrap;/
 }
 
 .container-contacto img {
-  max-width: 40%; 
+  max-width: 40%;
   height: auto;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 .contacto-forma {
   flex: 1;
-  max-width: 400px; 
-  margin: auto; 
+  max-width: 400px;
+  margin: auto;
 }
 
 .contacto-forma h4 {
   font-size: 1.5em;
-  color: #00bcd4; 
+  color: #00bcd4;
   margin-bottom: 15px;
-  text-align: left; 
-  margin-left: 0; 
+  text-align: left;
+  margin-left: 0;
 }
 
 .formulario-contacto {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 }
 
 
 .formulario-contacto input,
-.formulario-contacto textarea {
+.formulario-contacto textarea,
+.foro_discucion input,
+.foro_discucion textarea {
   width: 100%;
   padding: 10px;
-  border-radius: 20px; 
+  border-radius: 20px;
   font-size: 0.9em;
 }
 
-.formulario-contacto textarea {
+.formulario-contacto textarea,
+.foro_discucion textarea {
   resize: vertical;
   height: 120px;
 }
 
 .btn-enviar {
   background-color: #00bcd4;
-  padding: 10px; 
+  padding: 10px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -312,62 +319,185 @@ padding: 20px;
 .btn-enviar:hover {
   background-color: #fff;
   box-shadow: none;
-  
+
 }
 
 .container-contacto {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .contacto-info {
-    flex: 1;
-    max-width: 300px;
-    padding: 20px;
-    background-color: #ffffff; 
-    border-radius: 20px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  flex: 1;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contacto-info h4 {
-    font-size: 1.5em;
-    color: #00bcd4;
-    margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #00bcd4;
+  margin-bottom: 15px;
 }
 
 .contacto-info ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .contacto-info ul li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #333;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #333;
 }
 
 .contacto-info ul li i {
-    margin-right: 10px;
-    color: #00bcd4;
+  margin-right: 10px;
+  color: #00bcd4;
 }
 
 .contacto-info ul li a {
-    color: #00bcd4; 
-    text-decoration: none;
+  color: #00bcd4;
+  text-decoration: none;
 }
 
 .contacto-info ul li a:hover {
-    text-decoration: underline; 
+  text-decoration: underline;
 }
 
 .contacto-forma {
-    flex: 2; 
-    max-width: 500px;
-    margin: auto;
+  flex: 2;
+  max-width: 500px;
+  margin: auto;
 }
+
+.foro_discucion {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  min-height: 50vh;
+  max-height: 100vh;
+  color: rgb(50, 50, 50);
+}
+
+.temas {
+  width: 100%;
+  max-width: 30%;
+  display: flex;
+  min-height: 100%;
+  background-color: rgb(250, 250, 250);
+  flex-wrap: wrap;
+  padding: 15px;
+  align-content: flex-start;
+}
+
+.formulario, form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.temas h2{
+  width: 100%;
+}
+
+.temas .formulario button{
+  margin-top: 20px;
+}
+
+.foro_discucion label {
+  width: 100%;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.lista-temas{
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  border-top: 2px solid rgb(200,200,200);
+}
+
+.lista-temas ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  padding: 20px 0px;
+}
+
+.lista-temas li{
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  list-style-type: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.lista-temas li:hover{
+  background-color: #0a0f34;
+  color: white;
+}
+
+.comentarios, .contenido-comentarios, .formulario-comentario {
+  width: 100%;
+  max-height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: auto;
+}
+
+.comentarios{
+  align-content: space-between;
+  padding: 30px;
+}
+
+.formulario-comentario form{
+  border-top: 2px solid rgb(200,200,200);
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contenido-comentarios{
+  gap: 15px;
+  padding-bottom: 30px;
+}
+
+.item-comentario{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.texto-comentario{
+  border: 1px solid rgb(210,210,210);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 10px;
+  text-align: left;
+}
+
+.nombre-comentario{
+  color: rgb(20,20,20);
+  font-weight: 700;
+}
+
+
 
 
 @media only screen and (max-width: 768px) {
@@ -378,123 +508,123 @@ padding: 20px;
   .info-content {
     padding-bottom: 30px;
   }
-  
+
   .wrapper, .main, .portafolio, .seccion-contacto {
-      width: 100%;
-      padding: 20px;
+    width: 100%;
+    padding: 20px;
   }
 
   .navbar {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .menu {
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
   .menu li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   .main {
-      grid-template-columns: 1fr;
-      text-align: center;
-      height: auto;
+    grid-template-columns: 1fr;
+    text-align: center;
+    height: auto;
   }
 
   .main img {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
   }
 
   .about {
-      grid-template-columns: 1fr;
-      text-align: center;
-      padding: 30px 0;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 30px 0;
   }
 
   .about img {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .about--info {
-      padding: 20px;
+    padding: 20px;
   }
 
   .portafolio-headings {
-      padding: 2em 0;
-      text-align: center;
+    padding: 2em 0;
+    text-align: center;
   }
 
   .portafolio .container {
-      flex-direction: column;
-      align-items: center;
-      height: auto;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
 
   .card {
-      width: 100%;
-      margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .container-contacto {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .contacto-info, .contacto-forma {
-      max-width: 100%;
-      margin: 0 auto;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .main {
-      grid-template-columns: 1fr;
-      text-align: center;
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .main img {
-      width: 250px;
-      height: 250px;
-      margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
   }
 
   .about {
-      grid-template-columns: 1fr;
-      text-align: center;
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .about img {
-      width: 100%;
-      max-width: 350px;
-      margin: 0 auto;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
   }
 
   .portafolio .container {
-      flex-direction: column;
-      align-items: center;
-      height: auto;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
 
   .card {
-      width: 80%;
-      margin-bottom: 20px;
+    width: 80%;
+    margin-bottom: 20px;
   }
 
   .container-contacto {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .contacto-info, .contacto-forma {
-      max-width: 80%;
-      margin: 0 auto;
+    max-width: 80%;
+    margin: 0 auto;
   }
 }
