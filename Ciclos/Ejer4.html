@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio ciclo for</title>
+</head>
+<body>
+    <h1>Numeros impares 1 al 19</h1>
+    <div id="numeros"></div>
+    <script>
+        for(let i = 1; i <= 19; i++){
+            if(i % 2 !=0){
+                document.getElementById("numeros").innerHTML += i + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>

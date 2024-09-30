@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio ciclo for</title>
+</head>
+
+<body>
+    <h1>Numeros cuadrados</h1>
+    <div id="resultado"></div>
+    <script>
+        let resultado = '';
+
+        for (let i = 1; i <= 10; i++) {
+            let doble = i * 2;
+            resultado += i + " - " + doble + "<br>";
+        }
+        document.getElementById("resultado").innerHTML = resultado;
+
+
+
+
+
+
+
+
+
+
+
+        
+        if(1==1){
+            //Variable -> Campo en memoria RAM, que permite almacenar un valor o dato
+            var prueba1 = 0; //Declara variable, que permite reasignar y redeclarar
+            let pruebas2 = 1; //Declara variable, que permite reasignart pero no redeclarar
+            const estatica = 7; // Declara variable estatica, no se puede cambiar jamas
+            var textoPrueba = "Hola mundo";
+
+            console.log(typeof textoPrueba)
+
+            textoPrueba = "7";
+
+            console.log(textoPrueba == estatica, typeof estatica, typeof textoPrueba)
+
+            var prueba1 = 2; //Redeclarar
+            pruebas2 = 3; //Reasignar
+        }
+
+
+        if(1==1){
+            console.log(prueba1);
+            console.log(pruebas2);
+            console.log(estatica);
+        }
+
+    </script>
+</body>
+
+</html>

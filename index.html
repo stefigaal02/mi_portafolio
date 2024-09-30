@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="all.min.css">
     <script src="https://kit.fontawesome.com/309f569082.js" crossorigin="anonymous"></script>
 
+    <script>
+        function crearContacto() {
+            let nombre = document.getElementById("nombre").value;
+            let email = document.getElementById("email").value;
+            let mensaje = document.getElementById("mensaje").value;
+
+            console.log(nombre, email, mensaje);
+
+            if (!(nombre && String(nombre).trim() != '')) { return alert("El nombre es obligatorio") }
+            if (!(email && String(email).trim() != '')) { return alert("El email es obligatorio") }
+
+            fetch('http://localhost:9000/api/contactoMensaje', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',  // Indica que envia JSON
+                },
+                body: JSON.stringify({ nombre, email, mensaje }),
+            }).then((result) => {
+                console.log(result);
+                alert("Datos grabados con exito");
+            }).catch((error) => {
+                console.log(result);
+                alert("Hubo un error al grabar los datos, intente mas tarde");
+            })
+
+        }
+    </script>
 </head>
 
 <body>
@@ -247,11 +274,11 @@
 
                 <div class="contacto-forma">
                     <h4>Envíame un mensaje</h4>
-                    <form class="formulario-contacto">
-                        <input type="text" placeholder="Nombre">
-                        <input type="email" placeholder="Email">
-                        <textarea placeholder="Coloca tu mensaje aquí..."></textarea>
-                        <button class="btn-enviar">Enviar mensaje</button>
+                    <form class="formulario-contacto" name="form-contacto">
+                        <input id="nombre" type="text" placeholder="Nombre">
+                        <input id="email" type="email" placeholder="Email">
+                        <textarea id="mensaje" placeholder="Coloca tu mensaje aquí..."></textarea>
+                        <button type="button" class="btn-enviar" onclick="crearContacto()">Enviar mensaje</button>
                     </form>
                 </div>
             </div>
