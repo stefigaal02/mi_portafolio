@@ -409,7 +409,7 @@ span {
   width: 100%;
 }
 
-.temas .formulario button{
+.temas .formulario button, .temas .formulario textarea{
   margin-top: 20px;
 }
 
@@ -476,6 +476,12 @@ span {
   padding-bottom: 30px;
 }
 
+.comentarios h2{
+  width: 100%;
+  text-align: right;
+  padding-bottom: 15px;
+}
+
 .item-comentario{
   display: flex;
   flex-wrap: wrap;
@@ -492,9 +498,21 @@ span {
   text-align: left;
 }
 
+.item-comentario{
+  width: 100%;
+}
+
 .nombre-comentario{
+  text-align: left;
+  width: 100%;
   color: rgb(20,20,20);
   font-weight: 700;
+}
+
+.cont-coment{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 

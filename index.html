@@ -10,6 +10,8 @@
     <script src="https://kit.fontawesome.com/309f569082.js" crossorigin="anonymous"></script>
 
     <script>
+        //const RutaAPI = "http://localhost:9000/api";
+        const RutaAPI = "http://localhost:9000/api";
         function crearContacto() {
             let nombre = document.getElementById("nombre").value;
             let email = document.getElementById("email").value;
@@ -20,21 +22,163 @@
             if (!(nombre && String(nombre).trim() != '')) { return alert("El nombre es obligatorio") }
             if (!(email && String(email).trim() != '')) { return alert("El email es obligatorio") }
 
-            fetch('http://localhost:9000/api/contactoMensaje', {
+            fetch(RutaAPI + '/contactoMensaje', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',  // Indica que envia JSON
                 },
                 body: JSON.stringify({ nombre, email, mensaje }),
             }).then((result) => {
+                document.getElementById("nombre").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("mensaje").value = "";
                 console.log(result);
                 alert("Datos grabados con exito");
             }).catch((error) => {
-                console.log(result);
+                console.log(error);
                 alert("Hubo un error al grabar los datos, intente mas tarde");
             })
 
         }
+
+        function crearTema() {
+            let nombre = document.getElementById("nombre-tema").value;
+            let descripcion = document.getElementById("desc-tema").value;
+
+            console.log(nombre, descripcion);
+
+            if (!(nombre && String(nombre).trim() != '')) { return alert("El nombre del tema es obligatorio") }
+            if (!(descripcion && String(descripcion).trim() != '')) { return alert("La descripcion tema es obligatorio") }
+
+            fetch(RutaAPI + '/temas', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',  // Indica que envia JSON
+                },
+                body: JSON.stringify({
+                    titulo: nombre,
+                    descripcion: descripcion,
+                    autor: 'No identificado',
+                    respuestas: []
+                }),
+            }).then((result) => {
+                document.getElementById("nombre-tema").value = "";
+                document.getElementById("desc-tema").value = "";
+                traerTemas();
+                console.log(result);
+            }).catch((error) => {
+                console.log(error);
+                alert("Hubo un error al grabar los datos, intente mas tarde");
+            })
+
+        }
+
+        function crearComentario() {
+            let temaId = document.getElementById("temaId").value;
+            let nombre = document.getElementById("usuario-comentario").value;
+            let descripcion = document.getElementById("desc-comentario").value;
+
+            console.log(temaId, nombre, descripcion);
+
+            if (!(temaId && String(temaId).trim() != '')) { return alert("Selecciona un tema primero") }
+            if (!(nombre && String(nombre).trim() != '')) { return alert("El nombre del usuario es obligatorio") }
+            if (!(descripcion && String(descripcion).trim() != '')) { return alert("La descripcion del comentario es obligatorio") }
+
+            fetch(RutaAPI + '/comentarios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',  // Indica que envia JSON
+                },
+                body: JSON.stringify({
+                    temaId: temaId,
+                    mensaje: descripcion,
+                    autor: nombre,
+                    respuestas: []
+                }),
+            }).then((result) => {
+                document.getElementById("usuario-comentario").value = "";
+                document.getElementById("desc-comentario").value = "";
+                console.log(result);
+                traerComentariosTema(temaId);
+            }).catch((error) => {
+                console.log(error);
+                alert("Hubo un error al grabar los datos, intente mas tarde");
+            })
+        }
+
+        function traerTemas() {
+            fetch(RutaAPI + '/temas', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',  // Indica que envia JSON
+                }
+            }).then(async (result) => {
+                const temas = await result.json();
+                var temasHTML = "";
+                document.getElementById("temas-foro").innerHTML = temasHTML;
+
+                if (temas?.length > 0) {
+                    for (let i = 0; i < temas.length; i++) {
+                        temasHTML += '<li onClick="cambioTema(\'' + temas[i]._id + '\', \'' + temas[i].titulo + '\')">';
+                        temasHTML += temas[i].titulo;
+                        temasHTML += '</li>';
+                    }
+                }
+
+
+                document.getElementById("temas-foro").innerHTML = temasHTML;
+            }).catch((error) => {
+                console.log(error);
+                alert("Hubo un error al traer los datos, intente mas tarde");
+            })
+        }
+
+        function traerComentariosTema(idTema) {
+            if (!idTema) document.getElementById("contenido-comentarios").innerHTML = "";
+            fetch(RutaAPI + '/comentarios/tema/' + idTema, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',  // Indica que envia JSON
+                }
+            }).then(async (result) => {
+                const comentarios = await result.json();
+                console.log(comentarios);
+                var comentariosHTML = "";
+                document.getElementById("contenido-comentarios").innerHTML = comentariosHTML;
+
+                if (comentarios?.length > 0) {
+                    for (let i = 0; i < comentarios.length; i++) {
+                        comentariosHTML += '<div class="item-comentario">';
+                        comentariosHTML += '<div class="nombre-comentario">';
+                        comentariosHTML += comentarios[i].autor;
+                        comentariosHTML += '</div>';
+                        comentariosHTML += '<div class="texto-comentario">';
+                        comentariosHTML += comentarios[i].mensaje;
+                        comentariosHTML += '</div>';
+                        comentariosHTML += '</div>';
+                    }
+                }
+
+
+                document.getElementById("contenido-comentarios").innerHTML = comentariosHTML;
+            }).catch((error) => {
+                console.log(error);
+                alert("Hubo un error al traer los datos, intente mas tarde");
+            })
+        }
+
+        function cambioTema(IdTema, NombreTema) {
+            document.getElementById("temaId").value = IdTema;
+            document.getElementById("titulo-tema").innerHTML = NombreTema;
+
+            traerComentariosTema(IdTema);
+        }
+
+        setTimeout(() => {
+            traerTemas();
+            traerComentariosTema();
+        }, 500)
+
     </script>
 </head>
 
@@ -186,8 +330,12 @@
                     <h2>Temas</h2>
                     <form>
                         <label for="">Nombre</label>
-                        <input type="text" placeholder="Mi tema">
-                        <button type="button" class="btn-enviar fa-fade">Agregar tema &nbsp; <i class="fa-solid fa-pencil"></i></button>
+                        <input type="text" placeholder="Mi tema" id="nombre-tema">
+                        <textarea type="text" placeholder="Descripción" id="desc-tema"></textarea>
+                        <button type="button" class="btn-enviar fa-fade" onclick="crearTema()">
+                            Agregar tema &nbsp;
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
                     </form>
                 </div>
                 <div class="lista-temas">
@@ -199,43 +347,52 @@
                 </div>
             </div>
             <div class="comentarios">
-                <div class="contenido-comentarios">
-                    <div class="item-comentario">
-                        <div class="nombre-comentario">
-                            Geraldine Gallo
+                <div class="cont-coment">
+                    <h2 id="titulo-tema">Nombre del tema</h2>
+                    <div class="contenido-comentarios" id="contenido-comentarios">
+                        <div class="item-comentario">
+                            <div class="nombre-comentario">
+                                Geraldine Gallo
+                            </div>
+                            <div class="texto-comentario">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate placeat suscipit
+                                sapiente atque similique itaque vitae obcaecati veritatis asperiores iusto et ullam
+                                quae,
+                                deleniti ut aliquam ipsum eos accusamus nihil!
+                            </div>
                         </div>
-                        <div class="texto-comentario">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate placeat suscipit
-                            sapiente atque similique itaque vitae obcaecati veritatis asperiores iusto et ullam quae,
-                            deleniti ut aliquam ipsum eos accusamus nihil!
+                        <div class="item-comentario">
+                            <div class="nombre-comentario">
+                                Geraldine Gallo
+                            </div>
+                            <div class="texto-comentario">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate placeat suscipit
+                                sapiente atque similique itaque vitae obcaecati veritatis asperiores iusto et ullam
+                                quae,
+                                deleniti ut aliquam ipsum eos accusamus nihil!
+                            </div>
                         </div>
-                    </div>
-                    <div class="item-comentario">
-                        <div class="nombre-comentario">
-                            Geraldine Gallo
-                        </div>
-                        <div class="texto-comentario">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate placeat suscipit
-                            sapiente atque similique itaque vitae obcaecati veritatis asperiores iusto et ullam quae,
-                            deleniti ut aliquam ipsum eos accusamus nihil!
-                        </div>
-                    </div>
-                    <div class="item-comentario">
-                        <div class="nombre-comentario">
-                            Geraldine Gallo
-                        </div>
-                        <div class="texto-comentario">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate placeat suscipit
-                            sapiente atque similique itaque vitae obcaecati veritatis asperiores iusto et ullam quae,
-                            deleniti ut aliquam ipsum eos accusamus nihil!
+                        <div class="item-comentario">
+                            <div class="nombre-comentario">
+                                Geraldine Gallo
+                            </div>
+                            <div class="texto-comentario">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate placeat suscipit
+                                sapiente atque similique itaque vitae obcaecati veritatis asperiores iusto et ullam
+                                quae,
+                                deleniti ut aliquam ipsum eos accusamus nihil!
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="formulario-comentario">
                     <form>
-                        <input type="text" placeholder="Nombre">
-                        <textarea type="text" placeholder="Comentario" rows="2"></textarea>
-                        <button type="button" class="btn-enviar fa-beat">Enviar &nbsp; <i class="fa-solid fa-paper-plane"></i></button>
+                        <input id="temaId" style="display: none;">
+                        <input type="text" placeholder="Nombre Usuario" id="usuario-comentario">
+                        <textarea type="text" placeholder="Comentario" rows="2" id="desc-comentario"></textarea>
+                        <button type="button" class="btn-enviar fa-beat" onclick="crearComentario()">
+                            Enviar &nbsp; <i class="fa-solid fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
