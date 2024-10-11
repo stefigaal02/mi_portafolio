@@ -167,7 +167,7 @@
             })
         }
 
-
+        
         function cambioTema(IdTema, NombreTema) {
             document.getElementById("temaId").value = IdTema;
             document.getElementById("titulo-tema").innerHTML = NombreTema;
@@ -179,10 +179,11 @@
             traerTemas();
             traerComentariosTema();
         }, 500)
-
+        
         setInterval(() => {
+            traerTemas();
             traerComentariosTema(document.getElementById("temaId").value);
-        }, 15000);
+        }, 3000);
 
     </script>
 </head>
